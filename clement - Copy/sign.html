@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      backdrop-filter: blur(3 px);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    .signin-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+
+    }
+    .main{
+        margin-top:100PX;
+        margin-bottom:60PX ;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .forgot {
+      text-align: right;
+      margin-top: 5px;
+      font-size: 13px;
+    }
+
+    .forgot a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .signin-container {
+        padding: 25px;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TOM VILLA</div>
+   </nav>
+   <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+     <nav>
+         <ul>
+         <li><a href="index.html">HOME</a></li>
+         <li><a href="#about">ABOUT</a></li>
+         <li><a href="#SERVICES">SERVICES</a></li>
+         <li><a href="#Contact">CONTACT</a></li>
+         <li><a href="sign.html">Sign up</a></li>
+         <button id="theme-toggle">Toggle Theme</button>
+      </ul>
+ </header>
+     <section class="main">
+  <div class="signin-container">
+    <h2>Sign In</h2>
+    <form action="signin_process.php" method="POST">
+      <label for="email">Email or Username:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <div class="forgot">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit">Sign In</button>
+    </form>
+
+    <div class="signup-link">
+      Don't have an account? <a href="#">Sign up</a>
+    </div>
+  </div>
+</section>
+  <footer>
+    <div class="footer-links">
+      <a href="https://yourportfolio.com" target="_blank" title="Portfolio">
+        <i class="fas fa-briefcase"></i> Portfolio
+      </a>
+      <a href="https://dribbble.com/yourprofile" target="_blank" title="Dribbble">
+        <i class="fab fa-dribbble"></i> UI/UX Work
+      </a>
+      <a href="https://www.behance.net/yourprofile" target="_blank" title="Behance">
+        <i class="fab fa-behance"></i> Behance
+      </a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2025 Clement Appeynarh. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('nav ul');
+  
+    mobileMenu.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+    const toggleBtn = document.getElementById('theme-toggle');
+   const body = document.body;
+ 
+   toggleBtn.addEventListener('click', () => {
+     body.classList.toggle('light-mode');
+   });
+ 
+  </script>
+ 
+</body>
+</html>
